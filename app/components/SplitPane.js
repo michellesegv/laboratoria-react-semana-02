@@ -1,11 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const SplitPane = ({ left, right }) => {
   return (
     <div style={{
       display: 'flex',
-      flex: 1,
-      flexDirection: 'row',
+      width: '100%',
+      height: '100%',
+      flexFlow: 'row wrap',
       alignItems: 'center',
       justifyContent: 'center'
     }}
@@ -14,6 +16,11 @@ const SplitPane = ({ left, right }) => {
       {right}
     </div>
   )
+}
+
+SplitPane.propTypes = {
+  left: PropTypes.element,
+  right: PropTypes.element
 }
 
 export default SplitPane
